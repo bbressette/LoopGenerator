@@ -5,6 +5,7 @@
 
 LoopHeader::LoopHeader(LetterList * letterList, int difficulty) {
 
+	// randomly generate all for loop variables and operators
 	int modifier = difficulty < 2 ? 5 : 1;
 	int middleRand = rand() % (50 / modifier) - (25 / modifier);
 
@@ -20,6 +21,7 @@ LoopHeader::LoopHeader(LetterList * letterList, int difficulty) {
 
 	if (conditionOperator % 2 == 0) {
 
+		// 10 percent chance to make an infinite loop
 		counterOperator = rand() % 10 < 9 ? 0 : 1;
 
 		if (rand() % 10 < 9)
@@ -43,6 +45,7 @@ LoopHeader::LoopHeader(LetterList * letterList, int difficulty) {
 } // end constructor
 
 
+// determines if the loop will be infinite
 bool LoopHeader::isInfinite() const {
 
 	return (
@@ -58,6 +61,7 @@ bool LoopHeader::isInfinite() const {
 } // end isInfinite
 
 
+// display all variables at the top of the question associated with the for loop
 void LoopHeader::showVariables() const {
 
 	cout << ", " << B.letter << " = " << B.num;
@@ -68,6 +72,7 @@ void LoopHeader::showVariables() const {
 } // end showVariables
 
 
+// display for loop header
 void LoopHeader::showLine() const {
 
 	cout << "for (" << A.letter << " = " << A.num << "; " << A.letter;
@@ -103,6 +108,7 @@ void LoopHeader::showLine() const {
 } // end showLine
 
 
+// used for determining the answer to the question. iterates the value of A and returns true/false based on if the for loop condition is met.
 bool LoopHeader::iterate() {
 
 	if (firstIteration)

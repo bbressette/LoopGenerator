@@ -3,8 +3,10 @@
 #include <iostream>
 
 
+// this class is used for incrementing/decrementing the X value to be guessed
 ModifyVariable::ModifyVariable(LetterList * letterList, int difficulty) {
 
+	// randomly generate ++ or -- and the value to be added, subtracted from X
 	D.num = difficulty < 3 ? 1 : rand() % 4 + 2;
 	D.letter = letterList->grabLetter();
 
@@ -13,6 +15,7 @@ ModifyVariable::ModifyVariable(LetterList * letterList, int difficulty) {
 } // end constructor
 
 
+// increment/decrement X
 int ModifyVariable::calc(int num) const {
 
 	return (solutionOperator == 0 ? num - D.num : num + D.num);
@@ -20,6 +23,7 @@ int ModifyVariable::calc(int num) const {
 } // end calc
 
 
+// display the value of the increment/decrement integer at the top of the question
 void ModifyVariable::showVariables() const {
 
 	if (D.num > 1)
@@ -28,6 +32,7 @@ void ModifyVariable::showVariables() const {
 } // end showVariables
 
 
+// display the increment/decrement code in the question
 void ModifyVariable::showLine(char letter) const {
 
 	cout << letter;

@@ -5,8 +5,6 @@ using namespace std;
 
 class ModifyVariable {
 
-	friend class IfHeader;
-
 public:
 	ModifyVariable(LetterList * /* letterList */, int /* difficulty */);
 	int calc(int /* num */) const;

@@ -5,6 +5,7 @@
 
 IfHeader::IfHeader(LoopHeader * newLoopParent, LetterList * letterList) {
 
+	// randomly generate E variable and condition operator for the if statement
 	loopParent = newLoopParent;
 	conditionOperator = rand() % 4 + 1;
 
@@ -16,6 +17,7 @@ IfHeader::IfHeader(LoopHeader * newLoopParent, LetterList * letterList) {
 } // end constructor that uses A
 
 
+// display the E variable associated with the if statement at the top of the question
 void IfHeader::showVariables() const {
 
 	cout << ", " << E.letter << " = " << E.num;
@@ -23,6 +25,7 @@ void IfHeader::showVariables() const {
 } // end showVariables
 
 
+// display the if header
 void IfHeader::showLine() const {
 
 	cout << "if (";
@@ -49,6 +52,7 @@ void IfHeader::showLine() const {
 } // end showLine
 
 
+// returns true or false based on the if statement condition being met
 bool IfHeader::isTrue() const {
 
 	return (

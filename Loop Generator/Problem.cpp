@@ -33,6 +33,7 @@ ProblemLevelOne::~ProblemLevelOne() {
 } // end destructor
 
 
+// displays all variables listed at the top of the question
 void ProblemLevelOne::showVariables() const {
 
 	cout << "int " << X.letter << " = " << X.num;
@@ -43,10 +44,11 @@ void ProblemLevelOne::showVariables() const {
 } // end showVariables
 
 
+// determines the value of the X variable to be guessed
 int ProblemLevelOne::calcSolution() {
 	
 	if (loopParent->isInfinite())
-		X.num = -9999999;
+		X.num = 666;
 	else
 		while (loopParent->iterate())
 			X.num = modifyX->calc(X.num);
@@ -56,6 +58,7 @@ int ProblemLevelOne::calcSolution() {
 } // end calcSolution
 
 
+// displays the entire problem
 void ProblemLevelOne::show() const {
 
 	showVariables();
@@ -90,6 +93,7 @@ ProblemLevelTwo::~ProblemLevelTwo() {
 } // end destructor
 
 
+// displays all variables listed at the top of the question, including the added variable for the nested if statement
 void ProblemLevelTwo::showVariables() const {
 
 	ProblemLevelOne::showVariables();
@@ -98,6 +102,7 @@ void ProblemLevelTwo::showVariables() const {
 } // end showVariables
 
 
+// displays the entire problem
 void ProblemLevelTwo::show() const {
 
 	showVariables();
@@ -121,6 +126,7 @@ void ProblemLevelTwo::show() const {
 } // end show
 
 
+// determines the value of the X variable to be guessed
 int ProblemLevelTwo::calcSolution() {
 
 	if (loopParent->isInfinite())
